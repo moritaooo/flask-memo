@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>メモアプリ</title></head>
+<body>
+  <h1>メモ一覧</h1>
+  <form action="/add" method="post">
+    タイトル: <input type="text" name="title"><br>
+    本文: <textarea name="body"></textarea><br>
+    <input type="submit" value="投稿">
+  </form>
+  <hr>
+  {% for memo in memos %}
+    <h3>{{ memo.title }}</h3>
+    <p>{{ memo.body }}</p>
+    <hr>
+  {% endfor %}
+</body>
+</html>
